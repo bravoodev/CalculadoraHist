@@ -20,6 +20,7 @@ Clone o repositório com o comando:
 
 ```bash
 git clone https://github.com/bravoodev/CalculadoraHist.git
+```
 
 ## Funcionalidades
 	•	Realiza operações básicas: adição, subtração, multiplicação e divisão.
