@@ -8,7 +8,7 @@ Projeto Java criado com *Swing* no *NetBeans IDE 13*, com interface gráfica (JF
 
 ## Demonstração
 
-![Calculadora Java](./imagens/calculadora%20-%20Final.png)
+![Calculadora Java](./imgs/calculadora.png)
 
 ---
 
