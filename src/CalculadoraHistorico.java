@@ -392,7 +392,7 @@ valor1 = Double.parseDouble(txtVisor.getText());
         
         switch (operacao){
             case "+":
-            resultado = valor1 + valor2;
+            resultado = valor1 + valor2 + 1;
             break;
             case "-":
                 resultado = valor1 - valor2;
