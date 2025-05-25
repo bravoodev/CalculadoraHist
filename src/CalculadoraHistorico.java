@@ -1,5 +1,6 @@
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class CalculadoraHistorico extends javax.swing.JFrame {
     //Variáveis Globais
@@ -77,7 +78,7 @@ public class CalculadoraHistorico extends javax.swing.JFrame {
 
         btnMult.setBackground(new java.awt.Color(23, 19, 19));
         btnMult.setForeground(new java.awt.Color(255, 255, 255));
-        btnMult.setText("*");
+        btnMult.setText("mod");
         btnMult.setPreferredSize(new java.awt.Dimension(50, 50));
         btnMult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +108,7 @@ public class CalculadoraHistorico extends javax.swing.JFrame {
 
         btnMenos.setBackground(new java.awt.Color(23, 19, 19));
         btnMenos.setForeground(new java.awt.Color(255, 255, 255));
-        btnMenos.setText("-");
+        btnMenos.setText("√");
         btnMenos.setPreferredSize(new java.awt.Dimension(50, 50));
         btnMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +178,7 @@ public class CalculadoraHistorico extends javax.swing.JFrame {
 
         btnSoma.setBackground(new java.awt.Color(23, 19, 19));
         btnSoma.setForeground(new java.awt.Color(255, 255, 255));
-        btnSoma.setText("+");
+        btnSoma.setText("x²");
         btnSoma.setPreferredSize(new java.awt.Dimension(50, 50));
         btnSoma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +188,7 @@ public class CalculadoraHistorico extends javax.swing.JFrame {
 
         btnDiv.setBackground(new java.awt.Color(23, 19, 19));
         btnDiv.setForeground(new java.awt.Color(255, 255, 255));
-        btnDiv.setText("/");
+        btnDiv.setText("%");
         btnDiv.setPreferredSize(new java.awt.Dimension(50, 50));
         btnDiv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,14 +262,14 @@ public class CalculadoraHistorico extends javax.swing.JFrame {
                     .addComponent(txtVisor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDiv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDiv, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(btnSoma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMenos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,55 +365,69 @@ public class CalculadoraHistorico extends javax.swing.JFrame {
 
     private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
         valor1 = Double.parseDouble(txtVisor.getText());
-        operacao = "+";
+        operacao = "x²";
         txtVisor.setText("");
     }//GEN-LAST:event_btnSomaActionPerformed
 
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
         valor1 = Double.parseDouble(txtVisor.getText());
-        operacao = "-";
+        if (valor1>= 0){
+                double resultado = Math.sqrt(valor1);
+                txtHistorico.append("√" + valor1 + "=" + resultado + "\n");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Número inválido para raiz quadrada!");
+        }
+        operacao = "√";
         txtVisor.setText("");
     }//GEN-LAST:event_btnMenosActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
 valor1 = Double.parseDouble(txtVisor.getText());
-        operacao = "*";
+        operacao = "mod";
         txtVisor.setText("");
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
 valor1 = Double.parseDouble(txtVisor.getText());
-        operacao = "/";
+        operacao = "%";
         txtVisor.setText("");
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
+        if (txtVisor.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Digite um número antes de calcular.");
+            return;
+        }
         double valor2 = Double.parseDouble(txtVisor.getText());
         double resultado = 0;
         
         switch (operacao){
-            case "+":
-            resultado = valor1 + valor2;
+            case "x²":
+            resultado = Math.pow(valor1, 2);
+            txtHistorico.append(valor1 + "² = " + resultado + "\n");
             break;
-            case "-":
-                resultado = valor1 - valor2;
-                break;
-            case "*":
-                resultado = valor1 * valor2;
-                break;
-            case "/":
-                if (valor2 !=0) {
-                    resultado = valor1 / valor2;
+            case "√":
+                if (valor1>= 0){
+                resultado = Math.sqrt(valor1);
+                txtHistorico.append("√" + valor1 + "=" + resultado + "\n");
                 } else {
-                    txtVisor.setText("ERRO");
+                    JOptionPane.showMessageDialog(null, "Número inválido para raiz quadrada!");
                     return;
                 }
+                break;
+            case "%":
+                resultado = (valor1/100) * valor2;
+                txtHistorico.append(valor1 + "% =" + resultado + "\n");
+                break;
+            case "mod":
+                    resultado = valor1 % valor2;
+                    txtHistorico.append(valor1 + "% " + valor2 + "=" + resultado + "\n");
                 break;
         }
         txtVisor.setText(Double.toString(resultado));
         
         //Adiciona Historico
-        txtHistorico.append(valor1 + " " + operacao + " " + valor2 + " = " + resultado + "\n");
+        //txtHistorico.append(valor1 + " " + operacao + " " + valor2 + " = " + resultado + "\n");
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
