@@ -44,6 +44,7 @@ git clone https://github.com/bravoodev/CalculadoraHist.git
 Este projeto está sob a licença MIT.
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+
 Desenvolvido por Lucas Bravo
 GitHub - @bravoodev
 
