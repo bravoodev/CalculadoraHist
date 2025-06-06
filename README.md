@@ -1,50 +1,66 @@
-# Calculadora com Histórico
+🇧🇷 Leia este conteúdo em [Português](./README-pt.md)
 
-Projeto Java criado com *Swing* no *NetBeans IDE 13*, com interface gráfica (JFrame), botões personalizados e exibição de histórico de cálculos realizados.
 
-> Uma calculadora funcional e para estudos de lógica de programação e interface gráfica em Java.
+# 🧮 Calculator with History
 
----
-
-## Demonstração
-
-![Calculadora Java](./imgs/calculadora.png)
+> ⚠️ Note: The variable names and code comments are currently in Portuguese, as this project was initially developed for local learning purposes. An English version will be implemented in a future update.
 
 ---
 
-## Como executar o projeto
+## 📖 Description
 
-Certifique-se de ter o *Git* instalado.
+Java project created using *Swing* in *NetBeans IDE 13*, featuring a graphical interface (JFrame), custom buttons, and a display of the calculation history.
 
-Clone o repositório com o comando:
+> A fully functional calculator designed for studying programming logic and Java GUI development.
+
+---
+
+## 🖼️ Demo
+
+![Java Calculator](./imgs/calculadora.png)
+
+---
+
+## 🚀 How to Run the Project
+
+Make sure *Git* is installed on your system.
+
+Clone the repository using the command:
 
 ```bash
 git clone https://github.com/bravoodev/CalculadoraHist.git
 ```
 
-## Funcionalidades
-	•	Realiza operações básicas: adição, subtração, multiplicação e divisão.
-	•	Interface gráfica com botões personalizados.
-	•	Histórico automático dos cálculos realizados.
-	•	Layout responsivo fixo com campo de visor e rolagem para histórico.
-	•	Ícone e tema visual customizados.
+Open the project in NetBeans and run the JFrame form.
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+---
 
-## Tecnologias Utilizadas
-	•	Java
-	•	Java Swing (JFrame, JButton, JTextField, JScrollPane)
-	•	NetBeans IDE 13
-	•	Git e GitHub
+## ⚙️ Features
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+- ✅ Performs basic operations: addition, subtraction, multiplication, and division  
+- ✅ Graphical interface with custom buttons  
+- ✅ Automatic history of performed calculations  
+- ✅ Fixed responsive layout with display field and scrollable history  
+- ✅ Customized icon and visual theme
 
-## Licença
+---
 
-Este projeto está sob a licença MIT.
+## 🧠 Technologies Used
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+- Java  
+- Java Swing (JFrame, JButton, JTextField, JScrollPane)  
+- NetBeans IDE 13  
+- Git and GitHub
 
-Desenvolvido por Lucas Bravo
-GitHub - @bravoodev
+---
 
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Developer
+
+Developed by **Lucas Bravo**  
+GitHub – [@bravoodev](https://github.com/bravoodev)
